@@ -1,7 +1,7 @@
 # WP Zip Media
 Create compressed zip file from media library
 
-![Plugin in action](https://media.giphy.com/media/cO8VJD6oStY7p2rf5I/giphy.gif)
+![Plugin in action](https://media.giphy.com/media/f40YmzNsa61R4Mx20z/giphy.gif)
 
 ## Known issues
 * Only works in media list view
