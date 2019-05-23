@@ -36,7 +36,7 @@ function create_zip_media($filename, $filelist) {
     'post_status' => 'publish'
   ], $zip_path);
 
-  add_post_meta( $insert, 'is_bunble', 'true' );
+  add_post_meta( $insert, 'is_bundle', 'true' );
 
   return [
     'id' => $insert,
@@ -53,7 +53,7 @@ function create_zip_media($filename, $filelist) {
  * @return  array                 Zip detail
  */
 function get_zip_media( $id ) {
-  $is_bundle = get_post_meta( $id, 'is_bunble', true );
+  $is_bundle = get_post_meta( $id, 'is_bundle', true );
 
   if( empty( $is_bundle ) ) {
     return false;
