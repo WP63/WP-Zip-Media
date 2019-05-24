@@ -5,14 +5,13 @@ Create compressed zip file from media library
 
 ## Known issues
 * Only works in media list view
-* Likely to break when add files with the same name (Not tested. But pretty sure it will)
 * [Enter] key not working properly
 
 ## Roadmap
-* Composer package
-* Support media grid view
-* Auto rename duplicate filenames
-* Fix that [Enter] key issue
+- [ ] Composer package
+- [ ] Support media grid view
+- [x] Auto rename duplicate filenames
+- [ ] Fix that [Enter] key issue
 
 ---
 
