@@ -51,7 +51,7 @@ function create_zip_media($filename, $filelist, $update = false) {
   $insert = wp_insert_attachment([
     'guid' => $zip_url,
     'post_mime_type' => $filetype['type'],
-    'post_title' => preg_replace( '/\.[^.]+$/', '', basename( $zip_path ) ),
+    'post_title' => basename( $zip_path ),
     'post_content' => '',
     'post_status' => 'publish'
   ], $zip_path);
@@ -60,7 +60,7 @@ function create_zip_media($filename, $filelist, $update = false) {
 
   return [
     'id' => $insert,
-    'filename' => preg_replace( '/\.[^.]+$/', '', basename( $zip_path ) ),
+    'filename' => basename( $zip_path ),
     'filesize' => filesize( $zip_path ),
     'url' => $zip_url,
   ];
