@@ -20,12 +20,12 @@ function create_zip_media($filename, $filelist, $update = false) {
   }
 
   if( $update === false && file_exists( $upload_dir['path'] . '/' . $filename )) {
-    for( $i = 1, $exists = false; $exists === false; $i++ ) {
+    for( $i = 1, $exists = true; $exists === true; $i++ ) {
       $newfilename = str_replace(".zip", "-{$i}.zip", $filename);
 
       if( !file_exists($upload_dir['path'] . '/' . $newfilename) ) {
         $filename = $newfilename;
-        $exists = true;
+        $exists = false;
       }
     }
   }
