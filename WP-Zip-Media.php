@@ -3,7 +3,7 @@
 Plugin Name: WP Zip Media
 Plugin URI: https://wp63.co/plugins/wp-zip-media
 Description: Create compressed zip file from media library
-Version: 1.0
+Version: 1.1
 Author: WP63
 Author URI: https://wp63.co
 License: GPLv2 or later
