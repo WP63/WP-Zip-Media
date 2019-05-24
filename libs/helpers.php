@@ -8,11 +8,31 @@ use ZipArchive;
  *
  * @param   string      $filename   Output filename
  * @param   array       $filelist   List of file path to be added into zip file
+ * @param   boolean     $update       Whether update existing $filename or create new one. Default FALSE
  *
  * @return  array                   Zip detail
  */
-function create_zip_media($filename, $filelist) {
+function create_zip_media($filename, $filelist, $update = false) {
   $upload_dir = wp_upload_dir();
+
+  if( substr( $filename, -4 ) !== '.zip' ) {
+    $filename = $filename . '.zip';
+  }
+
+  if( $update === false && file_exists( $upload_dir['path'] . '/' . $filename )) {
+    for( $i = 1, $exists = false; $exists === false; $i++ ) {
+      $newfilename = str_replace(".zip", "-{$i}.zip", $filename);
+
+      if( !file_exists($upload_dir['path'] . '/' . $newfilename) ) {
+        $filename = $newfilename;
+        $exists = true;
+      }
+    }
+  }
+
+  $original_filename = $filename;
+  $filename = str_replace(' ', '-', html_entity_decode($filename));
+
   $zip_path = $upload_dir['path'] . '/' . $filename;
   $zip_url = $upload_dir['url'] . '/' . $filename;
 
